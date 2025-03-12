@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Vincent M. Tolentino's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Profile</div> 
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-btn">Home</a></li>
+                <li><a href="#about" class="nav-btn">About</a></li>
+                <li><a href="#projects" class="nav-btn">Projects</a></li>
+                <li><a href="#skills" class="nav-btn">Skills</a></li>
+                <li><a href="#testimonials" class="nav-btn">Testimonials</a></li>
+                <li><a href="#contact" class="nav-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <img src="assets/images/hero.jpg" alt="A professional portrait of John Vincent M. Tolentino">
+            <div class="hero-text">
+                <h1>John Vincent M. Tolentino</h1>
+                <p>Aspiring Web Developer</p>
+                <a href="#about" class="btn">About Me</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-me">
+            <h2>About Me</h2>
+            <p>Hello! I'm John Vincent M. Tolentino, a passionate individual with a keen interest in Web Technology. I am currently in the process of learning and expanding my knowledge in the field.</p>
+            <p>I enjoy tackling challenges and finding creative solutions to problems. Outside of coding, I enjoy reading, playing sports, and watching anime.</p>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Simple Future Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="assets/images/donation.jpg" alt="A screenshot of the Purr Donation project">
+                    <h3>Purr Donation</h3>
+                    <p>Donate for the Animals</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project-item">
+                    <img src="assets/images/love email.jpg" alt="A screenshot of the Love Email project">
+                    <h3>Love Email</h3>
+                    <p>Site for your loved one</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Java (Beginner level)</li>
+            </ul>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial-item">
+                <p>"John is a great problem-solver!" - A Happy Client</p>
+            </div>
+            <div class="testimonial-item">
+                <p>"His work ethic and creativity are commendable!" - A Colleague</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out!</p>
+            <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+            <div class="social-links">
+                <a href="#" target="_blank">Discord</a>
+                <a href="#" target="_blank">Telegram</a>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section id="interactive" class="interactive">
+            <h2>Interactive Component</h2>
+            <p id="output">Your message will appear here.</p>
+            <button id="welcomeBtn" class="btn">Click Me!</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 John Vincent M. Tolentino. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === "#") {
+                    e.preventDefault();
+                    return;
+                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Interactive JavaScript functionality
+        document.getElementById('welcomeBtn').addEventListener('click', function() {
+            alert("Welcome to JavaScript!");
+            const name = prompt("What's your name?");
+
+            if (name) {
+                const likesJavaScript = confirm("Do you like JavaScript?");
+                const outputMessage = likesJavaScript 
+                    ? `Hello, ${name}! Glad you like JavaScript!` 
+                    : `Hello, ${name}! Hope you learn to enjoy it!`;
+
+                document.getElementById('output').innerText = outputMessage;
+            } else {
+                document.getElementById('output').innerText = "Hello! Please provide a name next time.";
+            }
+        });
+    </script>
+</body>
+</html>
